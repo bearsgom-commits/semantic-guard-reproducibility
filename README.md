@@ -25,7 +25,7 @@ The experimental control parameter `epsilon` is **not** a differential-privacy g
 
 ## Current verification boundary
 
-A read-only audit of provided evidence independently recomputed 63 condition-level matched-MIA joins and reproduced **37/63 author-defined region flags** (epsilon breakdown: 0, 3, 8, 8, 9, 9, 0). This verifies aggregation consistency **only**; it does not independently rerun the BEIR retrieval, E5 encoding, or MIA attacks. The original matched-MIA attack generator and full execution provenance have not yet been recovered.
+A read-only audit of provided evidence independently recomputed 63 condition-level matched-MIA joins and reproduced **37/63 author-defined region flags** (epsilon breakdown: 0, 3, 8, 8, 9, 9, 0). This verifies aggregation consistency **only**; it does not independently rerun the BEIR retrieval, E5 encoding, or MIA attacks. The original matched-MIA, legacy-MIA, and Stage 3 aggregation source files were recovered and published in commit `cbe8fa6`. Their source bytes match the supplied ZIP. Full execution provenance and source embedding inputs have **not** yet been recovered.
 
 The source snapshot for Stage 3 dense retrieval uses NumPy inner-product ranking. A separate YAML setting mentions FAISS HNSW; the configuration alone does not establish that HNSW was used in the reported execution.
 
