@@ -1,0 +1,41 @@
+{
+  "provenance_status": "RECONSTRUCTED_NOT_ORIGINAL_EXECUTION_SOURCE",
+  "purpose": "Reproducibility repair for Semantic-Guard Stage 3",
+  "warning": "Reconstructed from verified artifacts and documented experiment contract. Not an original execution configuration.",
+  "epsilon_mapping": {
+    "0": {
+      "dimension": 128,
+      "quantization_bits": 4
+    },
+    "2": {
+      "dimension": 160,
+      "quantization_bits": 5
+    },
+    "4": {
+      "dimension": 192,
+      "quantization_bits": 6
+    },
+    "8": {
+      "dimension": 224,
+      "quantization_bits": 7
+    },
+    "16": {
+      "dimension": 256,
+      "quantization_bits": 8
+    },
+    "32": {
+      "dimension": 320,
+      "quantization_bits": 10
+    },
+    "64": {
+      "dimension": 768,
+      "quantization_bits": 16
+    }
+  },
+  "clip": 1,
+  "evidence": {
+    "dimension_basis": "Observed Guard artifact shapes across epsilon conditions",
+    "quantization_basis": "Verified Stage 3 experiment contract and current Guard implementation evidence",
+    "original_authoritative_mapping_source_recovered": false
+  }
+}
