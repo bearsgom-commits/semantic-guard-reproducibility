@@ -15,7 +15,7 @@ The experimental control parameter `epsilon` is **not** a differential-privacy g
 
 ## Directory guide
 
-- `src/` — supplied implementation snapshots; historical execution provenance may be incomplete.
+- `src/` — original Guard representation snapshot; historical execution provenance may be incomplete.
 - `configs/` — supplied experimental settings, with provenance labels.
 - `environment/` — environment details and known gaps.
 - `data/` — dataset acquisition and redistribution notes.
