@@ -27,4 +27,17 @@ The WBS11 copies are **byte-identical** to their corresponding `repo/scripts/sta
 - Full aggregation/region-flag lineage, including any later corrections.
 - Clean-room execution of source scripts and output comparison.
 
-**Caution:** The five source files have been inspected locally but have not yet been pushed as source files to this GitHub repository. This report must not be used to claim otherwise.
+## GitHub publication verification (2026-11-17)
+
+The three unique original scripts were published to `main` in commit [`cbe8fa68f0ec44d36b1f9a574bc4a4a05186d348`](https://github.com/bearsgom-commits/semantic-guard-reproducibility/commit/cbe8fa68f0ec44d36b1f9a574bc4a4a05186d348):
+
+| Published path | Git blob SHA-1 (matches supplied ZIP) |
+|---|---|
+| `scripts/stage3/run_attack_mia_matched.py` | `5e9c63ec385af1c7fa217a8a526ba251621fe76a` |
+| `scripts/stage3/run_attack_mia.py` | `c92d71c6acd6b5e8bbc949049e192ea808454fb0` |
+| `scripts/stage3/aggregate_stage3_ext.py` | `2b3671738b6dcc89634f820dedaaac4a7ad2b920` |
+
+The published source files are byte-identical to the corresponding three files in the supplied ZIP, as established by matching Git blob hashes and recorded local SHA-256.
+
+On a synthetic 48-row, 16-dimensional embedding array, the matched runner completed a small functional smoke test with sample_size=12, producing 24 attack items and the four expected output files. This is **not** a rerun or reproduction of any of the manuscript's 63 conditions. The original empirical inputs and execution logs remain outstanding.
+
