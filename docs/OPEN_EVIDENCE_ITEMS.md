@@ -4,7 +4,7 @@ Last reviewed: 2026-11-17.
 
 ## Files already public
 - Three original execution and aggregation Python scripts published in commit [`cbe8fa6`](https://github.com/bearsgom-commits/semantic-guard-reproducibility/commit/cbe8fa68f0ec44d36b1f9a574bc4a4a05186d348). Their contents match the supplied source ZIP.
-- Guard representation snapshot (functionally transcribed from provided audit ZIP; comments shortened, **not byte-identical to the archived source**): `src/guard_repr.py`.
+- Guard representation source `src/guard_repr.py`, restored byte-for-byte from the supplied archive; SHA-256 `8762a47804738160784f95d14e56a5217d09c13f4043f573991fbe6a2c72056d`. This does not prove historical execution code identity.
 - Reconstructed mapping, explicitly non-original: `configs/guard_mapping_reconstructed.json`.
 - 63-row matched-vs-legacy MIA derived comparison, epsilon summary and consistency checks.
 - `scripts/check_published_validation.py`: verifies the published derived tables only.
