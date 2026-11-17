@@ -1,0 +1,57 @@
+{
+  "condition_rows": 63,
+  "unique_conditions": 63,
+  "old_region_flags": 0,
+  "matched_region_flags": 37,
+  "region_changed": 37,
+  "matched_security_max_abs_diff_to_existing": 1.1102230246251565e-16,
+  "old_security_max_abs_diff_to_existing": 1.1102230246251565e-16,
+  "eps_matched_flags": {
+    "0": 0,
+    "2": 3,
+    "4": 8,
+    "8": 8,
+    "16": 9,
+    "32": 9,
+    "64": 0
+  },
+  "eps_security_means": {
+    "0": 0.8062,
+    "2": 0.8627,
+    "4": 0.8301,
+    "8": 0.8697,
+    "16": 0.8794,
+    "32": 0.837,
+    "64": 0.219
+  },
+  "source_matched_impact_summary": {
+    "conditions": 63,
+    "matched_mia_min": 0.48606768,
+    "matched_mia_max": 0.51252224,
+    "matched_mia_max_abs_deviation_from_0_5": 0.013932319999999998,
+    "old_region_flag_count": 0,
+    "matched_region_flag_count": 37,
+    "region_flag_changed_conditions": 37,
+    "old_vs_matched_security_spearman": 0.5037163530673312,
+    "old_security_mean_by_epsilon": {
+      "0": 0.6662540606159228,
+      "2": 0.6663146657837564,
+      "4": 0.6662203306823261,
+      "8": 0.666194895339517,
+      "16": 0.6662777447112386,
+      "32": 0.6662203118837468,
+      "64": 0.30887231414719263
+    },
+    "matched_security_legacy_formula_mean_by_epsilon": {
+      "0": 0.8062463369597395,
+      "2": 0.8627224488457875,
+      "4": 0.8301319727723994,
+      "8": 0.8696738110797594,
+      "16": 0.8794248949217914,
+      "32": 0.8369644104436926,
+      "64": 0.21895150371158809
+    },
+    "interpretation_constraint": "matched MIA values remain near chance; global min-max expands small raw differences and must not be interpreted as strong membership-security separation"
+  },
+  "input_file_count": 200
+}
