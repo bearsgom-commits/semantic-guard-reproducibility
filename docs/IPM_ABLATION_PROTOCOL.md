@@ -1,6 +1,6 @@
-# IP&M Guard dimension × quantization ablation — preregistration draft
+# IP&M Guard dimension × quantization ablation — prospective protocol
 
-**Status:** DESIGN ONLY / NOT EXECUTED. Date: 2026-11-19 (KST).
+**Status:** POST-REVIEW PROSPECTIVE DESIGN ONLY / NOT EXECUTED. Date: 2026-11-19 (KST). This is not a claim of preregistration before the manuscript's earlier experiments.
 
 This specifies a confirmatory supplemental experiment proposed in response to the manuscript review. No new empirical outcomes, positive findings, execution logs or reproduction claims are asserted here.
 
