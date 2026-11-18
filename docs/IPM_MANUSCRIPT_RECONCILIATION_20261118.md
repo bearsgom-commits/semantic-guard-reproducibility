@@ -36,3 +36,8 @@ The published `aggregate_stage3_ext.py` uses the unweighted mean of `(1-global_m
 5. Confirm final manuscript values and claims against frozen public evidence; do not relabel consistency checks as full reproduction.
 
 This file is an audit of outstanding issues, **not a PASS certificate**.
+
+## Additional arithmetic check (2026-11-18 KST)
+The current manuscript's discussion reports the mean exploratory Security Score across epsilon 0, 2, 4, 8, 16 and 32 as **0.8477**. The published `results/stage3/matched_mia/validation/verified_epsilon_summary.csv` values yield **0.8475273125038615** for the equally represented six epsilon levels (each nine conditions). This is another manuscript-to-public-data difference, not an independent recomputation from attack inputs. The previously recorded epsilon=64 mismatch and the 37/63 Region Flag agreement remain unchanged.
+
+**Disposition:** keep original manuscript table values pending complete table/figure lineage review; do not silently replace numbers with public derived CSV values. The editorial LaTeX working copy is kept outside this public reproducibility repository.
