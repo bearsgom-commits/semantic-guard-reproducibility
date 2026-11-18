@@ -41,3 +41,10 @@ This file is an audit of outstanding issues, **not a PASS certificate**.
 The current manuscript's discussion reports the mean exploratory Security Score across epsilon 0, 2, 4, 8, 16 and 32 as **0.8477**. The published `results/stage3/matched_mia/validation/verified_epsilon_summary.csv` values yield **0.8475273125038615** for the equally represented six epsilon levels (each nine conditions). This is another manuscript-to-public-data difference, not an independent recomputation from attack inputs. The previously recorded epsilon=64 mismatch and the 37/63 Region Flag agreement remain unchanged.
 
 **Disposition:** keep original manuscript table values pending complete table/figure lineage review; do not silently replace numbers with public derived CSV values. The editorial LaTeX working copy is kept outside this public reproducibility repository.
+
+## Manuscript methodology gate review (2026-11-19 KST)
+**RULE-03 — Utility threshold discrimination not established:** `scripts/stage3/aggregate_stage3_ext.py` uses `utility_score_mean < 0.98` for `region_flag_v3`. The manuscript's representative aggregate utility scores span 0.0406–0.1969. These aggregate means suggest the rule may be permissive in the evaluated range, but **the 63 per-condition utility values and gate-wise counts have not been inspected here**; do not assert that all 63 records pass until checked.
+
+**AUC-04 — Exploratory score directionality:** the composite currently applies `1 - global_minmax(membership_AUROC)`. AUROC 0.5 corresponds to chance-level ranking; lower-than-0.5 AUROC is not automatically a better privacy result if an attacker can reverse score orientation. The score is author-defined and should not be presented as a calibrated privacy measure. Recompute/sensitivity-check oriented AUROC (`max(AUC,1-AUC)`) or deviation from 0.5 before making stronger security-ordering claims. No new attack run or corrected security table is claimed.
+
+These two open methodological concerns have been disclosed in the Korean editorial working manuscript, **without changing measured values or inventing a completed experiment**.
