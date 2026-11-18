@@ -1,6 +1,6 @@
 # Outstanding source evidence — action required
 
-Last reviewed: 2026-11-17.
+Original evidence audit: 2026-11-17. Updated for local replay comparison: 2026-11-18.
 
 ## Files already public
 - Three original execution and aggregation Python scripts published in commit [`cbe8fa6`](https://github.com/bearsgom-commits/semantic-guard-reproducibility/commit/cbe8fa68f0ec44d36b1f9a574bc4a4a05186d348). Their contents match the supplied source ZIP.
@@ -9,8 +9,12 @@ Last reviewed: 2026-11-17.
 - 63-row matched-vs-legacy MIA derived comparison, epsilon summary and consistency checks.
 - `scripts/check_published_validation.py`: verifies the published derived tables only.
 
+## New local replay evidence (2026-11-18)
+
+A sanitized **63-row condition-level CSV** and provenance notes were added under `results/stage3/matched_mia/replay_20261118/`. The underlying local replay evidence archive contained 63 PASS reports: 42 pre-existing report comparisons and 21 freshly executed conditions in the final driver invocation. Recorded metric differences were zero. **The 63 individual sanitized JSON reports and original Guard embeddings are not yet public in this repository.** This supports a local attack-stage replay comparison, not independent reproduction from public inputs.
+
 ## Required to complete independent experiment reproducibility
-1. **Original execution commands, input embeddings, raw MIA outputs, and logs** for all conditions; scripts are available but historical run provenance is incomplete.
+1. **Original execution commands, input embeddings, raw MIA outputs, and logs** for all conditions; scripts and a derived 63-condition replay comparison CSV are available, but historical run provenance and complete public report-level evidence remain incomplete.
 2. **Original MIA attack score inputs** or an authorized reproducible data-generation path, and original command logs/seed.
 3. **BEIR experiment runner and inputs**, including dataset acquisition, exact preprocessing, qrels and model revision.
 4. **Retrieval implementation provenance** resolving NumPy exact dense vs configured FAISS HNSW.
