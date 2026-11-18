@@ -2,7 +2,7 @@
 
 This repository is being assembled as a **public evidence and reproducibility companion** for a manuscript intended for *Information Processing & Management* (IP&M).
 
-**Status (2026-11-17): IN PROGRESS — not a complete independent reproduction.**
+**Status (updated 2026-11-18): IN PROGRESS — not a complete independent reproduction.**
 
 ## Scope
 
@@ -31,9 +31,13 @@ The source snapshot for Stage 3 dense retrieval uses NumPy inner-product ranking
 
 Do not interpret near-0.5 matched-MIA AUROC as a general privacy guarantee.
 
+## Matched-MIA local replay evidence (2026-11-18)
+
+A later local audit recorded 63/63 PASS comparisons of matched-MIA attack-stage replay outputs against local canonical outputs. The final driver run freshly executed 21 TREC-COVID conditions and reused 42 earlier PASS reports for FiQA and SciFact. A sanitized condition-level CSV and an evidence-scope README are now public at [results/stage3/matched_mia/replay_20261118/](results/stage3/matched_mia/replay_20261118/). The 63 sanitized JSON reports and source embeddings are **not yet published** here. This extends the earlier aggregation-only audit but does not establish complete independent reproduction.
+
 ## Manuscript use
 
-Do not describe this repository as fully reproducible or cite a release until the missing inputs, scripts, execution instructions, figure lineage, and public-access checks are completed. This README will be updated as those checks are resolved.
+Do not describe this repository as fully reproducible. Cite only the specific publicly accessible audit materials and their limited verification scope until missing inputs, scripts, execution instructions, figure lineage, and public-access checks are completed. This README will be updated as those checks are resolved.
 
 ## Attribution and licenses
 
