@@ -1,6 +1,6 @@
 # Matched-MIA execution and verification
 
-Updated 2026-11-17. **Scope: source inspection and synthetic smoke test; not a reproduction of manuscript AUROC.**
+Original source/smoke-test audit: 2026-11-17. Replay evidence addendum: 2026-11-18. **Scope: source inspection, synthetic smoke test, derived-table verification, and local attack-stage replay comparison; not full independent reproduction of manuscript results.**
 
 ## Verified input layout
 
@@ -34,7 +34,7 @@ Never execute against an existing output directory: the script refuses overwrite
 
 ## Verified checks
 
-The original script completed a small synthetic 48-row / 16-dimensional smoke test with 12 members and 12 nonmembers, producing four expected files. This checks basic code operation **only**. Historical runs across 63 conditions remain unverified.
+The original script completed a small synthetic 48-row / 16-dimensional smoke test with 12 members and 12 nonmembers, producing four expected files. This checks basic code operation **only**. At the 2026-11-17 audit date, historical runs across 63 conditions had not been re-executed from available input embeddings. A subsequent 2026-11-18 local replay audit recorded 63/63 condition-level PASS comparisons (42 pre-existing reports and 21 newly executed in the final driver invocation). See `results/stage3/matched_mia/replay_20261118/README.md` and `condition_comparison_63.csv`. The 63 sanitized JSON reports and input embeddings are not yet hosted in this repository, so third-party independent reproduction remains unverified.
 
 The separate `scripts/check_published_validation.py` checks that the published 63-row audit table has unique keys, 37 matched-region flags, and epsilon-wise counts 0/3/8/8/9/9/0. It does **not** verify input embeddings or original attack score generation.
 
