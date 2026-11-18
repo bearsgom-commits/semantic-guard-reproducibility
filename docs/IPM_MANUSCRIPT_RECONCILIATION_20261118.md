@@ -48,3 +48,12 @@ The current manuscript's discussion reports the mean exploratory Security Score 
 **AUC-04 — Exploratory score directionality:** the composite currently applies `1 - global_minmax(membership_AUROC)`. AUROC 0.5 corresponds to chance-level ranking; lower-than-0.5 AUROC is not automatically a better privacy result if an attacker can reverse score orientation. The score is author-defined and should not be presented as a calibrated privacy measure. Recompute/sensitivity-check oriented AUROC (`max(AUC,1-AUC)`) or deviation from 0.5 before making stronger security-ordering claims. No new attack run or corrected security table is claimed.
 
 These two open methodological concerns have been disclosed in the Korean editorial working manuscript, **without changing measured values or inventing a completed experiment**.
+
+## Derived-data post-hoc orientation sensitivity (2026-11-19 KST)
+A reproducible calculation based solely on public `results/stage3/matched_mia/validation/matched_vs_old_63_conditions.csv` was added as `scripts/check_auc_orientation_sensitivity.py`.
+
+- The matched AUROC <= 0.60 membership gate passes **63/63** rows; the public primary Region Flag has **37/63** positive rows. Utility, stability and Re-ID individual-gate contribution counts **cannot be computed from the published CSV** because its source columns are absent.
+- Algebraic counterfactual: keep the already published two nonmembership contributions fixed in each `security_score_matched` row; substitute only the matched AUROC component, from `1-minmax(AUROC)` to `1-minmax(abs(AUROC-0.5))` (global min–max over the 63 public rows, equal 1/3 weight).
+- Across 63 rows, Spearman rank correlation with the public composite **0.0978584462**, mean absolute per-condition score change **0.1027341447**, maximum **0.3333333333**.
+- This is a **post-hoc analysis of derived outputs**, not a new attack run, independent validation of the input embeddings, or evidence that the alternative composite measures privacy accurately. The old manuscript values in Table 4 remain **unreconciled** with public derived epsilon means and have not been overwritten.
+- This reveals that monotonic scoring of un-oriented AUROC can heavily alter exploratory composite ordering. It is separate from the previously observed component-exclusion sensitivity and must not be conflated with a test of statistical significance.
