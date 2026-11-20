@@ -25,3 +25,19 @@ Output a *sanitized, aggregate-only* ZIP (outside original research folder): 63 
 ## Related confirmed work
 
 Stage1B v16 full-test exact-output computation passed 23,952/23,952 judged-test query-run ranking matches from stored embeddings; that proves exact-output reproducibility only, not the historical executable identity or original E5 inference. Stage1A T1/T2 attacker-projection sensitivity remains a separate security-proxy scope, not privacy certification.
+
+
+## Author Mac execution and reviewed aggregate evidence — 2026-11-20 15:05 KST
+
+**Execution now confirmed from user-uploaded artifact** `IPM_stage1b_v18_test_stability_evidence.zip` SHA256 `43436e7a15403de2d788bed80097600503b16fb5ea77dfc26c31ee01dcb37af0`. ZIP internal CRC PASS; six files include 63 condition records, 21 dataset-epsilon means, 7 epsilon macro means, 42 paired-bootstrap outcomes, 207 original-file SHA256 inputs and source provenance. Local script SHA256 `0ff0cac3187e3833c0930a05447ec7d5409384f5e198a13d66ce2e9f07f8fc3b` agrees with the pinned audited v18 script. Original joined, runner, stability source and qrels SHA gates are declared in the Mac-generated manifest. The run covers 20,958 judged-test Guard-vs-Raw query pairs over 63 conditions.
+
+**Independent arithmetic consistency audit:** 63→21, 63→7 means agree at floating-point precision across 7 metrics; `Utility Mean = (Recall@10+nDCG@10)/2` exact within float precision; all 42 bootstrap point estimates equal differences of the matching dataset-epsilon means. No missing values or duplicated condition keys. Flag counts historical all-query 37/63 vs judged-test 34/63. Bootstrap label distribution: **35 favorable / 7 uncertain / 0 unfavorable** under nominal unadjusted percentile 95% intervals, chosen metric directions and fixed seeds. TREC-COVID 16→32 has 6/7 intervals including zero; TREC-COVID 32→64 Flip CI includes zero. Do **not** claim universal statistical improvements. There are 42 comparisons and **no multiple-comparison adjustment**.
+
+**Scope limitation:** The uploaded ZIP has no per-query data; this cloud-side review *did not independently regenerate 5000 bootstrap draws from original query records*. The author's read-only Mac script had recomputed Top1, Top10 overlap, author-defined Kendall union50, Hit@10 Flip from original stored rankings and checked them against per-query source metrics before exporting the archive. Bootstrap resamples qids only after averaging three fixed seed outcomes. The custom union-order score is not Kendall tau-b. No raw query IDs, document IDs, corpus text, embedding matrices or ranking lists were shared.
+
+**Separate v18 Korean manuscript candidate produced** (not final submission, original `SCI_First.zip/main.tex` untouched):
+- Review ZIP SHA256 `100bf496c900cf1217cde8c721f54071b4d435c0c0e3666f30868e424343ab8e` — 18 files, integrity PASS, candidate TEX / source bibliography / figures / 63+21+7+42 derived CSVs / source manifest / diff and review report.
+- Candidate PDF SHA256 `de38ae2c8a8e2c8d67a584a1dee0b20824757e1e843130dbec7584378a354ffd`, 39 pages. XeLaTeX/BibTeX compilation PASS. Key new stability and CI tables on PDF pp.21–22 were visually inspected and display correctly; font fallback and minor floats/line overflow remain editorial cleanup work.
+- Separate review report SHA256 `0c29cc5b6020dd273beb29c234aa99d16b36929eacdfa225d7a06c64456c3498`.
+
+**Open next scientific gates:** BM25/Gaussian matched test-cohort comparability; professor-requested dimension × quantization ablation and additional model experiment; source-limited security assertions (T1/T2); final English manuscript review. Nothing in v18 proves historical HNSW absence or E5 embedding recreation.
