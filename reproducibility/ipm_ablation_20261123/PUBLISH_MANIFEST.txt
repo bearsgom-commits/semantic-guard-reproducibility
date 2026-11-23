@@ -1,0 +1,7 @@
+PROVENANCE=ChatGPT-generated script sources; identical Mac Downloads copies checked only if present
+GENERATED_SCRIPT_COUNT=13
+MAC_IDENTICAL_SCRIPT_COUNT=13
+MAC_UNAVAILABLE_SCRIPT_COUNT=0
+RETRIEVAL_BATCH=36/36 PASS as reported by author; this package does not contain raw/row-level rerun outputs
+EVIDENCE_LIMIT=Full independent reproduction still requires permitted input data, versioned environment and source-to-run binding
+NO_ORIGINAL_RESEARCH_FILES_CHANGED=YES_BY_THIS_PUBLISHER
