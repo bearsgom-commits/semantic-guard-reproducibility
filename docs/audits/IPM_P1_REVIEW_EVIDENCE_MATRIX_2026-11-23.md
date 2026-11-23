@@ -132,3 +132,30 @@ If PASS, expand to SciFact 3 seeds ×4 =12 cells. Full three-dataset 36-cell sec
 - **P1 decision:** `GO_WITH_SOURCE_BLOCKER`, not full PASS.
 
 No frozen manuscript, original Guard source, historical result, or existing 36-cell result was modified by this audit.
+
+
+## 6. P1 implementation closeout
+
+The P1 feasibility decision has now been translated into isolated executable artifacts without modifying frozen manuscripts, original Guard code, historical attack outputs, or the completed 36-cell retrieval/stability results.
+
+### P2 artifact
+- Path: `reproducibility/ipm_p2_security_20261123/scripts/ipm_p2_index_membership_pilot_v1.py`
+- Remote commit: `34110c8707d0f497409a719257c56e5c5767c48a`
+- Scope: SciFact seed-7 four-cell matched index-membership-proxy pilot; regenerates only the sampled security-input Guard rows from frozen E5 embeddings; **does not execute retrieval**.
+- Real scientific pilot status at P1 closeout: **NOT YET EXECUTED**. No paper result is claimed.
+
+### P3 artifact
+- Path: `reproducibility/ipm_p3_second_encoder_20261123/scripts/ipm_p3_second_encoder_preflight_v1.py`
+- Authoritative remote commit: `cc8183898f68095260fcff485102739b93a6c22f`
+- Candidate: `Alibaba-NLP/gte-multilingual-base`, legacy-compatible model revision `9bbca17d9273fd0d03d5725c7a4b0f6b45142062`.
+- The preflight resolves the separate `Alibaba-NLP/new-impl` remote-code repository to a full SHA before loading configuration and records that SHA. It loads tokenizer/config only; scientific model weights/embeddings are not generated.
+- Earlier intermediate P3 commits, including `038133b51d4d856c61955be318e263b87cf46885`, are **superseded and must not be used as execution evidence**.
+- Real Mac preflight status at P1 closeout: **NOT YET EXECUTED**.
+
+### Closeout decision
+P1 has completed the evidence classification and produced bounded P2/P3 executable gates. The next scientifically necessary actions are:
+1. run the P2 four-cell SciFact security pilot against the local frozen research inputs;
+2. run the P3 no-scientific-data preflight to freeze the exact second-model and remote-code revisions in the actual execution environment;
+3. only after each gate passes, expand the corresponding branch according to the predeclared stop rules.
+
+Exact `manuscript_v18_candidate.tex` content is still not recovered here, so P6 line-level manuscript reconciliation remains blocked. This does **not** authorize substituting a different working manuscript.
