@@ -101,7 +101,7 @@ def main() -> int:
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--model-id", default=MODEL_ID_DEFAULT)
     ap.add_argument("--model-revision", default=MODEL_REVISION_DEFAULT, help="official legacy-compatible full pinned revision")
-    ap.add_argument("--max-length", type=int, default=512, help="prospective fixed truncation budget for the sensitivity experiment")
+    ap.add_argument("--code-revision", default="main", help="remote-code revision to resolve and freeze before scientific embedding generation")\n    ap.add_argument("--max-length", type=int, default=512, help="prospective fixed truncation budget for the sensitivity experiment")
     a = ap.parse_args()
 
     root = a.root.expanduser().resolve(strict=True)
@@ -189,7 +189,7 @@ def main() -> int:
             "trust_remote_code": True,
             "scientific_weights_loaded": False,
         },
-        "prospective_control_note": "max_length=512 is fixed for this sensitivity experiment to reduce preprocessing/context-window confounding; revision=9bbca17d9273fd0d03d5725c7a4b0f6b45142062 resolves the official legacy-compatible 9bbca17 revision; this manifest does not claim it reconstructs every historical E5 tokenizer detail",
+        "prospective_control_note": "max_length=512 is fixed for this sensitivity experiment to reduce preprocessing/context-window confounding; the model revision resolves the official legacy-compatible 9bbca17 revision; the separate remote-code repository is resolved once to a full SHA before any scientific embeddings are generated; this manifest does not claim it reconstructs every historical E5 tokenizer detail",
         "software": {
             "python": sys.version.split()[0],
             "transformers": transformers_version,
