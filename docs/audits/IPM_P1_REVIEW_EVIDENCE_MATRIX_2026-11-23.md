@@ -12,6 +12,7 @@
 - Exact `manuscript_v18_candidate.tex` contents were **not recovered** from the public repository or currently searchable project/library files during this P1 audit. Therefore sentence/line-level v18 trace remains blocked.
 - P2 code evidence: `scripts/stage3/run_attack_mia_matched.py`, `scripts/stage3/run_attack_mia.py`, `docs/IPM_STAGE1A_THREAT_MODEL_ALIGNMENT_20261119.md`, `docs/MIA_SOURCE_AUDIT_20261117.md`, `docs/MATCHED_MIA_EXECUTION.md`.
 - Factorial code evidence: `reproducibility/ipm_ablation_20261123/scripts/ipm_ablation_factorial_runner_v2.py` and immutable Guard implementation `src/guard_repr.py`.
+- Publication-package evidence: `reproducibility/ipm_ablation_20261123/PUBLISH_MANIFEST.txt` states that raw/row-level rerun outputs are not included; the factorial runner computes guarded document vectors in memory but does not persist full `guard_embeddings.npy` arrays.
 - Environment evidence: `environment/KNOWN_ENVIRONMENT.md`.
 - Local-input inventory confirms BEIR FiQA/SciFact/TREC-COVID corpus/query files exist in the research tree; this audit does not publish their contents.
 
@@ -45,7 +46,7 @@ The published `run_attack_mia_matched.py` is a functioning **matched index-membe
 
 The runner locates historical files through `dataset / intfloat_multilingual-e5-base / stage3 / seed / epsilon`. The new factorial cells are D/B conditions, including off-diagonals with **no epsilon label**. Therefore direct invocation would be scientifically and operationally wrong.
 
-The correct minimal solution is a **new isolated script** that accepts an explicit `--guard-path` plus the factorial cell identity. The original script and historical results remain unchanged.
+The correct minimal solution is a **new isolated security script** that either accepts an explicit Guard matrix or deterministically regenerates only the required four-cell Guard representations from the frozen raw E5 embeddings using the immutable Guard functions. The public 36-cell package does **not** contain full guarded row matrices, so a direct "reuse the previously saved four matrices" path is not presently evidenced. This four-cell representation regeneration is security-input preparation, **not** a rerun of the completed 36-cell retrieval sweep. The original runner, original Guard source and historical results remain unchanged.
 
 ### 3.3 Semantic limitation
 
@@ -56,10 +57,10 @@ This protocol tests whether a representation row belongs to the sampled comparis
 Use **SciFact, seed 7, all four D/B cells** as the low-cost protocol-validity pilot:
 `(128,4), (128,10), (320,4), (320,10)`.
 
-Use the exact same ordered corpus IDs and the same sampled row-index arrays across all four cells. The 2,500+2,500 sampling is feasible only if all four cell arrays expose the identical 5,183-row SciFact corpus order.
+Generate the four guarded SciFact matrices from the same frozen ordered raw E5 corpus embeddings and the same immutable Guard transform used by the factorial runner, without performing retrieval. Use the exact same ordered corpus IDs and the same sampled row-index arrays across all four cells. The 2,500+2,500 sampling is feasible because SciFact has 5,183 corpus rows, provided the frozen raw embedding/ID alignment passes.
 
 **Pilot PASS is methodological, not result-direction based.** Required:
-1. four cell input hashes/manifests valid and immutable;
+1. frozen raw E5 embedding/ID inputs and Guard source hashes valid and immutable, and the four regenerated security-input matrices trace to them;
 2. corpus row count/order and document-ID identity identical;
 3. exactly the same member/nonmember/index rows across four cells;
 4. balanced 2,500/2,500 labels, self-exclusion count=2,500;
