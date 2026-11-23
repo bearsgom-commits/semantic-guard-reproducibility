@@ -1,0 +1,22 @@
+{
+  "source": "stability_query_36.csv",
+  "family_comparisons": 45,
+  "bootstrap_reps": 5000,
+  "random_seed": 20261123,
+  "resampling_unit": "judged qid within dataset",
+  "seeds": "7, 13, 42 fixed and averaged within query",
+  "effect_definitions": {
+    "dimension": "average of D320-D128 at both bit settings",
+    "bits": "average of B10-B4 at both dimensions",
+    "interaction": "(D320B10-D320B4)-(D128B10-D128B4)"
+  },
+  "confidence_intervals": "percentile query bootstrap 95% nominal; Bonferroni 45 contrasts",
+  "limitations": [
+    "does not sample seeds, datasets, encoders or corpus documents",
+    "historical RAW ranker and prospective guard run may differ in computational pathway",
+    "decision flip is hit@10 proxy, not human operational decisions",
+    "tau_on_union has nonstandard tie treatment",
+    "no security inference or privacy guarantees",
+    "45-contrast family does not cover previously reported utility tests"
+  ]
+}
